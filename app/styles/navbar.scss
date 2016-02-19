@@ -1,0 +1,286 @@
+
+
+/** Search Form JS ****
+
+$navSubmit.click(function(e){
+  e.preventDefault();
+  var val = $navSearchIp.val();
+  if(val !== ''){
+    //submit the search
+    $('.navbar-form').submit();
+  } else {
+    $navSearch.addClass('active');
+  }
+});
+
+$('#nav-search input, #nav-submit').blur(function(){
+  // Wait in case a search is submitted
+  setTimeout(function(){
+    if(!$navSearchIp.is(':focus')){
+      $navSearchIp.val('');
+      $navSearch.removeClass('active');
+    }
+  }, 200);
+});
+
+$navSearch.keypress(function(e) {
+    if (event.which == 13) {
+        event.preventDefault();
+        $('.navbar-form').submit();
+    }
+});
+*********************************************/
+
+
+/******************************************
+    1. Navbar Section
+******************************************/
+
+$highlightColor:  "#7ECDC3";
+$linkText: "#425968";
+$fontSize: 20px;
+$navBarHeight: 120px;
+$stickBarHeight: $navBarHeight*0.7;
+$logoHeight: 80px;
+$stickyLogoHeight: 60px;
+$topBackgroundColor: "#FFF";
+$stickyBackgroundColor: "#FFF";
+
+
+body {
+  margin-top: $navBarHeight;
+  padding-top: 0px;
+}
+
+
+.affix-top, .affix-top .navbar-brand, .affix-top .nav,.affix, .affix .navbar-brand, .affix .nav, #logo {
+  -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.affix-top {
+  height: $navBarHeight;
+  background-color: $topBackgroundColor;
+  border-color: rgba(255,255,255,0.5);
+}
+
+.affix-top .navbar {
+  color: rgba(255,255,255,0);
+  padding-top: $navBarHeight*0.4;
+  font-size: $fontSize;
+}
+
+.affix-top .nav {
+  margin-top: $navBarHeight*0.3;
+}
+
+.affix {
+  height: $stickBarHeight;
+  background-color: $stickyBackgroundColor;
+}
+
+.affix .nav {
+  margin-top: 20px;
+}
+
+/******************** Search Form start *****************/
+
+
+#nav-submit{
+  float:right;
+}
+
+#nav-search{
+  transition: width 1.5s ease, opacity 1s;
+  width: 0px;
+  opacity: 0;
+  display: inline-block;
+}
+#nav-search input{
+  float: right;
+  border-radius: 15px;
+}
+
+#nav-search.active{
+  transition: width 0.5s ease;
+  width: 160px;
+  opacity: 1;
+}
+
+#nav-submit  {
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  border: none;
+  background: transparent;
+  outline: 0;
+}
+/********************  Search Form End *****************/
+
+
+/******************** Nav Links start *****************/
+.affix-top a, li.active > a{
+    color: $linkText;
+    font-weight: bold;
+    font-size: $fontSize;
+}
+.affix-top a:hover, li.active > a{
+  color: $highlightColor;
+}
+
+.affix .nav a {
+   color:  $linkText;
+   font-weight: bold;
+   font-size: $fontSize;
+}
+
+.affix-top .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  color: $linkText;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  background: none;
+  color: #010101;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background: none;
+}
+/******************** Nav Links End *****************/
+
+
+.navbar .navbar-brand {
+      padding: 20px;
+  }
+
+.affix .navbar-brand {
+      padding-top: 10px;
+      padding-left: 10px;
+}
+
+.affix-top #nav-toggle {
+      top: 28px;
+}
+
+
+
+/***** Hamburger Mobile Menu **************/
+.affix-top #nav-toggle {
+      top: $navBarHeight/2.5;
+}
+
+#nav-toggle {
+    position: absolute;
+    right: 20px;
+    top: $navBarHeight/4;
+    -webkit-transition: top .3s ease-in-out;
+    -o-transition: top .3s ease-in-out;
+    transition: top .3s ease-in-out;
+}
+
+#nav-toggle { cursor: pointer; padding: 10px 35px 16px 0px; }
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: gray;
+  position: absolute;
+  display: block;
+  content: '';
+}
+#nav-toggle.collapsed span {
+  background-color: gray;
+}
+#nav-toggle.collapsed span:before {
+  transform: rotate(0deg);
+  top: -10px;
+}
+#nav-toggle.collapsed span:after {
+  transform: rotate(-0deg);
+  top: 10px;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  transition: all 500ms ease-in-out;
+}
+#nav-toggle span {
+  background-color: transparent;
+}
+#nav-toggle span:before, #nav-toggle span:after {
+  top: 0;
+}
+#nav-toggle span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle span:after {
+  transform: rotate(-45deg);
+}
+
+@media (min-width: 768px) {
+  #nav-toggle {
+          display: none;
+
+  }
+}
+@media (max-width: 768px) {
+
+  #navbar-collapse {
+    background-color: $topBackgroundColor;
+    }
+  #navbar-collapse .nav {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .nav-pills > li {
+    width: 100%;
+    float: left;
+  }
+  #navbar-collapse .nav.pull-right {
+    float: left !important;
+  }
+
+  #navbar-collapse {
+    background-color: #FFF;
+
+  }
+
+  .ipost {
+    padding-bottom: 15px;
+  }
+
+  .affix-top a {
+      color: gray;
+  }
+
+  #navbar-collapse {
+        margin-top: $stickBarHeight/3;
+  }
+
+  .affix-top #navbar-collapse {
+        margin-top: $navBarHeight/2;
+  }
+
+  .navbar-header {
+      float: none;
+  }
+  .navbar-collapse.collapse {
+      display: none !important;
+  }
+
+  .navbar-collapse.collapse.in {
+      display: block !important;
+  }
+
+  .navbar-default .navbar-form {
+      border: none;
+      float: left;
+      padding-left: 20px;
+  }
+}
+
+
+
+/******* Hamburger Icons End **********/

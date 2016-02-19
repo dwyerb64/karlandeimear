@@ -93,3 +93,26 @@ body {
     border-bottom: 0;
   }
 }
+
+/* ------------------------------------- */
+/*       Background        */
+/* ------------------------------------- */
+.grey-back {
+  background-color: #eeeeee;
+}
+
+#landing {
+    position: relative;
+    height: 100%;
+    padding: 150px;
+    margin-bottom: 0px;
+    background-size: cover !important;
+}
+
+/*-------   Background End ------ */
+
+section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
