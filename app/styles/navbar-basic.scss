@@ -1,0 +1,101 @@
+
+
+/******************************************
+    1. Navbar Section
+******************************************/
+
+
+
+.navbar-default {
+  background-color: transparent;
+}
+
+.affix.navbar-default {
+  background-color: white;
+}
+
+.nav > li > a {
+  color: white;
+  padding: 15px 15px;
+}
+
+.affix .nav > li > a {
+  color: black;
+  padding: 15px 15px;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
+  color: black;
+}
+
+
+
+/***** Hamburger Icon **************/
+
+  #nav-toggle {
+    display: none;
+  }
+  @media (max-width: 767px) { 
+    #nav-toggle {
+      display: block;
+    }
+  }
+
+#nav-toggle {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    -webkit-transition: top .3s ease-in-out;
+    -o-transition: top .3s ease-in-out;
+    transition: top .3s ease-in-out;
+}
+
+#nav-toggle { cursor: pointer; padding: 10px 35px 16px 0px; }
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+}
+#nav-toggle.collapsed span {
+  background-color: white;
+}
+
+.affix #nav-toggle.collapsed span , .affix #nav-toggle span,.affix  #nav-toggle span:before,.affix #nav-toggle span:after {
+  background-color: BLACK;
+} 
+
+#nav-toggle.collapsed span:before {
+  transform: rotate(0deg);
+  top: -10px;
+}
+#nav-toggle.collapsed span:after {
+  transform: rotate(-0deg);
+  top: 10px;
+}
+#nav-toggle span,  #nav-toggle span:before,  #nav-toggle span:after,
+.affix #nav-toggle span,.affix  #nav-toggle span:before,.affix  #nav-toggle span:after {
+  transition: all 500ms ease-in-out;
+}
+#nav-toggle span , .affix #nav-toggle span {
+  background-color: transparent;
+}
+#nav-toggle span:before, #nav-toggle span:after {
+  top: 0;
+}
+#nav-toggle span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle span:after {
+  transform: rotate(-45deg);
+}
+
+
+
+
+/******* Hamburger Icons End **********/

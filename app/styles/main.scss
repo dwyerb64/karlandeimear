@@ -5,6 +5,8 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 // endbower
 
 @import "type.scss";
+@import "landing.scss";
+@import "navbar-basic.scss";
 
 .browsehappy {
   margin: 0.2em 0;
@@ -15,7 +17,6 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
 /* Space out content a bit */
 body {
-  padding-top: 20px;
   padding-bottom: 20px;
 }
 
@@ -101,13 +102,6 @@ body {
   background-color: #eeeeee;
 }
 
-#landing {
-    position: relative;
-    height: 100%;
-    padding: 150px;
-    margin-bottom: 0px;
-    background-size: cover !important;
-}
 
 /*-------   Background End ------ */
 

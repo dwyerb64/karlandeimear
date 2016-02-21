@@ -17,6 +17,9 @@ SEMICOLON.documentOnReady = {
                   event.preventDefault();
           });
 
+       SEMICOLON.functions.startTime();
+
+
     },
     
     windowscroll: function() {
@@ -30,6 +33,18 @@ SEMICOLON.functions = {
     
   functionName: function(){
         
+  },
+
+  startTime: function(){
+    var endtime = '2016-08-22';
+    var t = Date.parse(endtime) - Date.parse(new Date());
+    var seconds = Math.floor( (t/1000) % 60 );
+    var minutes = Math.floor( (t/1000/60) % 60 );
+    var hours = Math.floor( (t/(1000*60*60)) % 24 );
+    var days = Math.floor( t/(1000*60*60*24) );
+
+    document.getElementById('jsCountDown').innerHTML =    days + " days, " + hours + " hours, " + minutes + " minutes and " + seconds + " seconds";
+    var t = setTimeout(SEMICOLON.functions.startTime, 500);
   },
 
   sesEmail: function(){
