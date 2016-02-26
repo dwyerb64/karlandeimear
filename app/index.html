@@ -23,6 +23,37 @@
     <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
   </head>
   <body>
+    <div class="modal fade" id="successEmail" tabindex="-1" role="dialog">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <p>Thank you for confirming your attendance at our wedding on Monday 22nd 
+
+August 2016. We are very excited and look forward to seeing you in sunny 
+
+Malta this August.</p>
+
+<p>Please email karlandeimear@gmail.com with the name of your 
+
+hotel/accommodation once booked, so we can organise wedding day 
+
+transport for you.
+
+Thank you and we appreciate your assistance with this.
+</p>
+<p>
+Love, Karl & Eimear</p>
+      </div>
+<!--       <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -43,10 +74,11 @@
               <ul class="nav nav-pills pull-right">
                 <li><a class="page-scroll" href="#wedding">Our Wedding</a></li>
                 <li><a class="page-scroll" href="#story">Our Story</a></li>
+                <li><a class="page-scroll" href="#rsvp">RSVP</a></li>
                 <li><a class="page-scroll" href="#travel">Travel</a></li>
                 <li><a class="page-scroll" href="#accommodation">Accommodation</a></li>
                 <li><a class="page-scroll" href="#extra">Extra Information</a></li>
-                <li><a class="page-scroll" href="#rsvp">RSVP</a></li>
+                
                 <!-- <li><a href="#google-map"><span class="glyphicon glyphicon-search"></span></a></li> -->
               </ul>
               <!-- ENDNAVITEMS -->
@@ -73,11 +105,11 @@
         <div class="row">
           <div class="col-xs-12 text-center">
             <h1>Our Wedding</h1>
-            <h3>Monday 22nd August 2016 @ 5pm</h3>
+            <p>Monday 22nd August 2016 @ 4pm</p>
             <h2 >Wedding Ceremony</h2>
-            <p>Our Lady of Victories Church, Naxxar, Malta</p>
+            <p>Church of Our Lady of Mount Carmel, Tower Road, Sliema, Malta</p>
             <h2>Reception</h2>
-            <p>Villa Rosa, St. Julians, Malta</p>
+            <p>Villa Rosa, San Ġiljan, Malta</p>
             <em class="text-muted">* Please note Maltese Church law requires that shoulders and knees are covered during the wedding ceremony.</em>
           </div>
         </div>
@@ -88,19 +120,70 @@
         <div class="row">
           <div class="col-xs-12 text-center">
             <h1>Our Story</h1>
-            <p>Eimear and Karl are legends. That's all you need to know...</p>
+            <p>Karl and Eimear met in what is today a normal fashion, online. Delving into the scary world of the internet neither had any idea who would pop up in the 'yes - no game show' that is the fickle world of online dating.
+However after only dipping the tip of a toe into these murky waters, a mere number of hours, their courtship began. They talked a little, and then a lot and between meeting online one Sunday to meeting in person on the following Thursday their faith was sealed. Little did they suspect, with their first date at Awesome Walls Climbing Centre (where Karl could get in a decent climb if the date went flat).</p>
+<p>From there their relationship blossomed taking them all over Europe and America, on many amazing adventures. Their love of travel sparked Karl to propose in Oslo, Norway on December 28th, 2015. Eimear answered 'of course' and as they say the rest is history!!</p>
           </div>
         </div>
       </div>
     </section>
-    <section id="travel">
+    <section id="rsvp" >
+      <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+        <h1 class="text-center">RSVP</h1>
+        <form role="form" id="email-form">
+          <div class="col-sm-6 col-sm-offset-3 col-xs-12">
+            <div class="form-group">
+              <label for="inputName">Your Name</label>
+              <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Enter Name" required>
+            </div>
+            <div class="form-group">
+              <label for="inputGuestName">Name of Guest(s)</label>
+              <input type="text" class="form-control" name="inputGuestName" id="inputGuestName" placeholder="Enter Guest Name">
+            </div>
+            <div class="form-group">
+              <label for="inputAttend">Number Attending</label>
+              <input type="text" class="form-control" name="inputAttend" id="inputAttend" placeholder="Enter Number of Attendees" required>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail">Your Email</label>
+                <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Enter Email" required  >
+
+            </div>
+            <div class="form-group">
+              <label for="inputHotel">Hotel Name</label>
+              <input type="text" class="form-control" name="inputHotel" id="inputHotel" placeholder="Enter Hotel Name (if already booked)">
+            </div>
+            
+            <div class="form-group">
+              <label for="inputMessage">Additional Comments</label>
+              
+                <textarea name="inputMessage" id="inputMessage" class="form-control" 
+              <input type="text" class="form-control" name="inputMessage" id="inputMessage" placeholder="Dietary Requirements, Compliments, etc"  rows="5"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="inputReal">What is 4+3? (Simple Spam Checker)</label>
+              
+                <input type="text" class="form-control" name="inputReal" id="inputReal" required>
+            </div>
+            <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+          </div>
+        </form>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section id="travel" class="grey-back">
       <div class="container">
         <div class="row">
-          <div class="col-xs-12">
+          <div class="col-xs-12 text-center">
             <h1 class="text-center">Travel</h1>
             <h2>Flights</h2>
-            <em>Ryanair fly direct to Malta International Airport from Dublin Airport and London Luton Airport (visit <a href="http://www.ryanair.com">www.ryanair.com</a> to book flights).</em>
-            <table class="table">
+            <p>Ryanair fly direct to Malta International Airport from Dublin Airport (Monday, Tuesday, Thursday, Saturday and Sunday) and London Luton Airport (every day).</p> 
+            <em>Visit <a href="http://www.ryanair.com">www.ryanair.com</a> to book flights.</em>
+
+            <!-- <table class="table">
               <thead>
                 <th></th>
                 <th>Mon</th>
@@ -117,23 +200,23 @@
               <tbody>
                 <tr>
                   <th>DUB - MLA</th>
-                  <td>15th August</td>
-                  <td>16th August</td>
-                  <td>18th August</td>
-                  <td>20th August</td>
-                  <td>21st August</td>
-                  <td>22nd August</td>
-                  <td>23rd August</td>
-                  <td>25th August</td>
-                  <td>27th August</td>
-                  <td>28th August</td>
+                  <td>15th</td>
+                  <td>16th</td>
+                  <td>18th</td>
+                  <td>20th</td>
+                  <td>21st</td>
+                  <td>22nd</td>
+                  <td>23rd</td>
+                  <td>25th</td>
+                  <td>27th</td>
+                  <td>28th</td>
                 </tr>
                 <tr>
                   <th>LTN - MLA</th>
-                  <td colspan="10" class="text-center">Ryanair fly to Malta from London Luton Airport every day</td>
+                  <td colspan="10" class="text-center"></td>
                 </tr>
               </tbody>
-            </table>
+            </table> -->
 
             <h2>From the airport:</h2>
             <ol> 
@@ -154,7 +237,7 @@
               St. Julians is a tourist area and has many hotels and villas to rent. Since our reception will be in St.
               Julians we recommend guest stay in this area for the night of the wedding.
             </em>
-            <table class="table">
+            <table class="table hidden-xs">
               <thead>
                 <tr>
                   <th>Hotel</th><th>Address</th><th>Star</th><th>TripAdvisor</th><th>Booking.com</th>
@@ -230,52 +313,7 @@
         </div>
       </div>
     </section>
-    <section id="rsvp" class="grey-back">
-      <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12">
-        <h1 class="text-center">RSVP</h1>
-        <form role="form" action="" method="post" >
-          <div class="col-sm-6 col-sm-offset-3 col-xs-12">
-            <div class="form-group">
-              <label for="InputName">Your Name</label>
-              <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
-            </div>
-            <div class="form-group">
-              <label for="InputGuestName">Name of Guest(s)</label>
-              <input type="text" class="form-control" name="InputGuestName" id="InputGuestName" placeholder="Enter Guest Name">
-            </div>
-            <div class="form-group">
-              <label for="InputAttend">Number Attending</label>
-              <input type="text" class="form-control" name="InputAttend" id="InputAttend" placeholder="Enter Number of Attendees" required>
-            </div>
-            <div class="form-group">
-              <label for="InputEmail">Your Email</label>
-                <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter Email" required  >
-
-            </div>
-            <div class="form-group">
-              <label for="InputName">Hotel Name (if already booked)</label>
-              <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="InputMessage">Additional Comments</label>
-              
-                <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
-            </div>
-            <div class="form-group">
-              <label for="InputReal">What is 4+3? (Simple Spam Checker)</label>
-              
-                <input type="text" class="form-control" name="InputReal" id="InputReal" required>
-            </div>
-            <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
-          </div>
-        </form>
-        </div>
-      </div>
-      </div>
-    </section>
+    
 
     <div class="footer">
         <p><span class="glyphicon glyphicon-heart"></span> from the lads</p>

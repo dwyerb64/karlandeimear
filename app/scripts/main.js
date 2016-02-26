@@ -19,6 +19,38 @@ SEMICOLON.documentOnReady = {
 
        SEMICOLON.functions.startTime();
 
+       // $("#email-form").ajaxForm({url: 'server.php', type: 'post'})
+       $("#email-form").on( "submit", function( event ) {
+        event.preventDefault();
+
+           // $.post(
+           //  'https://dxsgi1spah.execute-api.us-west-2.amazonaws.com/prod/sendemail', 
+           //  , 
+           //  )
+           //   .fail(function() {
+           //        alert( "Error occurred trying to email. Please try again." );
+           //      });
+
+
+          $.ajax({
+              type: 'POST',
+              url: 'https://dxsgi1spah.execute-api.us-west-2.amazonaws.com/prod/sendemail',
+              contentType: 'application/json',
+              data: SEMICOLON.functions.serializeObject($('#email-form')),
+              dataType: 'json',
+              success: function (data) {
+                  // Process success
+                  
+                  SEMICOLON.functions.emailSuccess();
+              },
+              error: function (e) {
+                  // Process error
+
+                  alert( "Error occurred trying to email. Please try again." );
+              },
+          });
+       });
+
 
     },
     
@@ -56,23 +88,31 @@ SEMICOLON.functions = {
             
   		// $.post();
 
-  		$.ajax({
-		    type: 'POST',
-		    url: 'https://dxsgi1spah.execute-api.us-west-2.amazonaws.com/prod/sendemail',
-		    contentType: 'application/json',
-		    data: JSON.stringify({"name": "test", "email": "dwyerb@tcd.ie", "message": "test test"}),
-		    dataType: 'json',
-		    success: function (data) {
-		        // Process success
-		        alert("success");
-		    },
-		    error: function (e) {
-		        // Process error
+      $('#email-form');
 
-		        alert("error: " + e);
-		    },
-		});
+  		
 
+  },
+
+  emailSuccess: function(){
+    $('#successEmail').modal('show');
+
+  },
+
+  serializeObject : function(form){
+      var o = {};
+      var a = form.serializeArray();
+      $.each(a, function() {
+          if (o[this.name] !== undefined) {
+              if (!o[this.name].push) {
+                  o[this.name] = [o[this.name]];
+              }
+              o[this.name].push(this.value || '');
+          } else {
+              o[this.name] = this.value || '';
+          }
+      });
+      return o;
   }
 };
 

@@ -7,6 +7,7 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 @import "type.scss";
 @import "landing.scss";
 @import "navbar-basic.scss";
+@import "spacing.scss";
 
 .browsehappy {
   margin: 0.2em 0;
@@ -102,11 +103,27 @@ body {
   background-color: #eeeeee;
 }
 
+#accommodation, #story{
+  height: 100vh;
+      background-size: cover !important;
+}
+
+#accommodation {
+  height: 100vh;
+      background-size: cover !important;
+    background: url(../images/malta-radisson-blu-faded.jpg);
+  
+}
+
+#story {
+    background: url(../images/KarlsAndEimearExports/KarlAndEimear-7-faded1.png);
+        background-position: center top; 
+}
 
 /*-------   Background End ------ */
 
 section {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
