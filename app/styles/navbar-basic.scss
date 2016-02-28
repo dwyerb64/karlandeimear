@@ -15,7 +15,7 @@
 }
 
 .nav > li > a {
-  color: white;
+  color: black;
   padding: 15px 15px;
 }
 
@@ -57,13 +57,13 @@
   border-radius: 1px;
   height: 5px;
   width: 35px;
-  background: white;
+  background: black;
   position: absolute;
   display: block;
   content: '';
 }
 #nav-toggle.collapsed span {
-  background-color: white;
+  background-color: black;
 }
 
 .affix #nav-toggle.collapsed span , .affix #nav-toggle span,.affix  #nav-toggle span:before,.affix #nav-toggle span:after {

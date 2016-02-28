@@ -20,8 +20,8 @@ exports.handler = function (event, context) {
         context.fail('The Number Attending is required.');
         return;
     }
-    if (!event.inputReal || event.inputReal.trim() === '' || event.inputReal === '7') {
-        context.fail('The validation input is required.');
+    if (!event.inputReal || event.inputReal.trim() === '' || event.inputReal != "7") {
+        context.fail('4 + 3 = 7. Please enter 7 in the last field and submit the form.');
         return;
     }
 
@@ -30,18 +30,19 @@ exports.handler = function (event, context) {
     var email = unescape(event.inputEmail.trim());
     var guestName = event.inputGuestName ? event.inputGuestName : " None Provided";
     var hotel = event.inputHotel ? event.inputHotel : " None Provided";
+    var extraMessage = event.inputMessage ? event.inputMessage.trim() : " None Provided";
     var replyTo = event.name + " <" + email + ">";
     var subject = "RSVP from " + name;
-    var message = "RSVP from " + name + " <" + email + ">\n\n" + "Number attending: " + event.inputAttend  + "\n\n Guest Names: " + guestName + "\n\n Hotel: " + hotel + "\n\n Message: " + event.inputMessage.trim();
+    var message = "RSVP from " + name + " <" + email + ">\n\n" + "Number attending: " + event.inputAttend  + "\n\n Guest Names: " + guestName + "\n\n Hotel: " + hotel + "\n\n Message: " + extraMessage;
 
     // Send the email via SES.
     var params = {
-        Destination: { ToAddresses: [ 'Brian Dwyer <dwyerb@tcd.ie>' ] },
+        Destination: { ToAddresses: [ 'Karl And Eimear <karlandeimear@gmail.com>' ] },
         Message: {
             Body: { Text: { Data: message, Charset: 'UTF-8' } },
             Subject: { Data: subject, Charset: 'UTF-8' }
         },
-        Source: "Brian Dwyer <dwyerb@tcd.ie>",
+        Source: 'Karl And Eimear <karlandeimear@gmail.com>',
         ReplyToAddresses: [ replyTo ]
     };
     ses.sendEmail(params, function (err, data) {
